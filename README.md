@@ -1,5 +1,6 @@
-This package adds support for server side Handlebars in Meteor. It's a stop gap
-until Meteor supports server side template rendering.
+This package adds support for server side Handlebars in Meteor. It's primarily
+intended as a stop gap for server side email html until Meteor releases server
+side rendering support.
 
 ## Install the package with Meteorite
 `> mrt add handlebars-server`
