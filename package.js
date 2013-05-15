@@ -31,7 +31,7 @@ Package.register_extension("handlebars",
     type: "js",
     data: new Buffer(data),
     where: where,
-    path: sourceDir + "test.js"
+    path: path.resolve(sourceDir, templateName + '.tmpl.js')
   });
 });
 
