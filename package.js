@@ -31,7 +31,7 @@ Package.register_extension("handlebars",
     type: "js",
     data: new Buffer(data),
     where: where,
-    path: path.resolve(sourceDir, templateName + '.tmpl.js')
+    path: path.resolve(sourceDir, templateName + '.handlebars.js')
   });
 });
 
@@ -41,7 +41,8 @@ Package.on_test(function (api) {
     [
      'handlebars-server.js', 
      'handlebars-server-tests.js',
-     'handlebars-server-tests.handlebars'
+     'handlebars-server-tests.handlebars',
+     'handlebars-server-tests-2.handlebars'
     ],
     'server'
   );
