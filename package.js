@@ -2,7 +2,7 @@ var fs = Npm.require('fs');
 var path = Npm.require('path');
 
 Npm.depends({
-  "handlebars": "v1.0.10"
+  "handlebars": "1.0.10"
 });
 
 Package.describe({
