@@ -15,7 +15,7 @@ Package._transitional_registerBuildPlugin({
 });
 
 Package.on_use(function (api) {
-  api.use('handlebars', 'server');
+  api.use(['handlebars', 'underscore'], 'server');
   api.add_files('handlebars-server.js', 'server');
   api.export('OriginalHandlebars', 'server');
 });
