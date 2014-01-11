@@ -17,7 +17,8 @@ Plugin.registerSourceHandler("handlebars", function (compileStep) {
   
   js = [
     "var template = OriginalHandlebars.compile(" + JSON.stringify(contents) + ");",
-    "Handlebars.templates[" + JSON.stringify(templateName) + "] = function (data) { ",
+    "Handlebars.templates[" + JSON.stringify(templateName) + "] = function (data, partials) { ",
+    "partials = (partials || {});",
     "return template(data || {}, { ",
       "helpers: OriginalHandlebars.helpers,",
       "partials: {},",
