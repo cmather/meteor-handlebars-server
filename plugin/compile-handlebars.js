@@ -21,7 +21,7 @@ Plugin.registerSourceHandler("handlebars", function (compileStep) {
     "partials = (partials || {});",
     "return template(data || {}, { ",
       "helpers: OriginalHandlebars.helpers,",
-      "partials: {},",
+      "partials: partials,",
       "name: " + JSON.stringify(templateName),
      "});",
     "};"
