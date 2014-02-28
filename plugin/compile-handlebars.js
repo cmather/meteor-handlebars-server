@@ -19,10 +19,11 @@ Plugin.registerSourceHandler("handlebars", function (compileStep) {
     "Handlebars = Handlebars || {};",
     "Handlebars.templates = Handlebars.templates || {} ;",
     "var template = OriginalHandlebars.compile(" + JSON.stringify(contents) + ");",
-    "Handlebars.templates[" + JSON.stringify(templateName) + "] = function (data) { ",
+    "Handlebars.templates[" + JSON.stringify(templateName) + "] = function (data, partials) { ",
+    "partials = (partials || {});",
     "return template(data || {}, { ",
       "helpers: OriginalHandlebars.helpers,",
-      "partials: {},",
+      "partials: partials,",
       "name: " + JSON.stringify(templateName),
      "});",
     "};"
