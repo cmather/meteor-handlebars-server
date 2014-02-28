@@ -34,3 +34,7 @@ hello, {{name}}
 Handlebars.templates['my-template']({name: 'Chris'});
 // > hello, Chris
 ```
+
+## Helpers
+
+You can define helpers on the server via `OriginalHandlebars.registerHelper` method.
