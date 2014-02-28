@@ -16,7 +16,8 @@ Plugin.registerSourceHandler("handlebars", function (compileStep) {
   var templateName = path.basename(compileStep.inputPath).match(/(.*)\.handlebars$/)[1];
   
   js = [
-    "Handlebars = Handlebars || {templates: {}};",
+    "Handlebars = Handlebars || {};",
+    "Handlebars.templates = Handlebars.templates || {} ;",
     "var template = OriginalHandlebars.compile(" + JSON.stringify(contents) + ");",
     "Handlebars.templates[" + JSON.stringify(templateName) + "] = function (data) { ",
     "return template(data || {}, { ",
