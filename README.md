@@ -38,3 +38,6 @@ Handlebars.templates['my-template']({name: 'Chris'});
 ## Helpers
 
 You can define helpers on the server via `OriginalHandlebars.registerHelper` method.
+
+## License
+MIT
