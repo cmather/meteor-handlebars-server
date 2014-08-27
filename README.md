@@ -3,7 +3,7 @@ intended as a stop gap for server side email html until Meteor releases server
 side rendering support.
 
 ## Install the package with Meteorite
-`> mrt add handlebars-server`
+`> meteor add cmather:handlebars-server`
 
 ## Install the package without Meteorite in your project folder
 ```
