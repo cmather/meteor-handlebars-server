@@ -3,7 +3,8 @@ Npm.depends({
 });
 
 Package.describe({
-  summary: "Allows handlebars templates to be defined on the server in .handlebars files"
+  summary: "Allows handlebars templates to be defined on the server in .handlebars files",
+  version: "0.2.0"
 });
 
 Package._transitional_registerBuildPlugin({
@@ -15,6 +16,7 @@ Package._transitional_registerBuildPlugin({
 });
 
 Package.on_use(function (api) {
+  api.versionsFrom('METEOR-CORE@0.9.0-rc12');
   api.use(['handlebars', 'underscore'], 'server');
   api.add_files('handlebars-server.js', 'server');
   api.export('Handlebars', 'server');
