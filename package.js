@@ -25,7 +25,7 @@ Package.on_use(function (api) {
 
 Package.on_test(function (api) {
   api.use([
-   'handlebars-server',
+   'cmather:handlebars-server',
    'tinytest',
    'test-helpers'
   ], 'server');
