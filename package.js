@@ -3,8 +3,10 @@ Npm.depends({
 });
 
 Package.describe({
+  name:    "cmather:handlebars-server",
   summary: "Allows handlebars templates to be defined on the server in .handlebars files",
-  version: "0.2.0"
+  version: "0.2.0",
+  git:     "https://github.com/EventedMind/meteor-handlebars-server.git"
 });
 
 Package._transitional_registerBuildPlugin({
