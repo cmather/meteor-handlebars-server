@@ -11,6 +11,7 @@ side rendering support.
 > git init
 > mkdir packages
 > git submodule add https://github.com/EventedMind/meteor-handlebars-server.git packages/handlebars-server
+> meteor add handlebars-server
 ```
 
 ## Usage
