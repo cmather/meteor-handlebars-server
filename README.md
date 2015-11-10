@@ -1,7 +1,7 @@
 This package helps you to use handlebars templates in a easy way. Good for email
 templating. This package is a fork of cmather:handlebars-server.
 
-## Install the package with Meteorite
+## Install the package
 `> meteor add astrocoders:handlebars-server`
 
 ## Usage
