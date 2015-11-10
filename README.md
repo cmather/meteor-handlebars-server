@@ -1,43 +1,37 @@
-This package adds support for server side Handlebars in Meteor. It's primarily
-intended as a stop gap for server side email html until Meteor releases server
-side rendering support.
+This package helps you to use handlebars templates in a easy way. Good for email
+templating. This package is a fork of cmather:handlebars-server.
 
 ## Install the package with Meteorite
-`> meteor add cmather:handlebars-server`
-
-## Install the package without Meteorite in your project folder
-```
-> cd my-project
-> git init
-> mkdir packages
-> git submodule add https://github.com/EventedMind/meteor-handlebars-server.git packages/handlebars-server
-```
+`> meteor add astrocoders:handlebars-server`
 
 ## Usage
 
-Any files with a .handlebars extension will be available as functions under the
-`Handlebars.templates` namespace. 
+Any files with a .handlebars/.hbs extension will be available as functions under
+the `Handlebars.templates` namespace.
 
-The templates need to be accesible to the server (i.e. put them inside your /server directory).
+The templates need to be accessible to the server (i.e. put them inside your
+/server directory).
 
-The handlebars files should just be regular html. Don't wrap them in Meteor template tag.
+The handlebars files should just be regular HTML. Don't wrap them in Meteor
+`<template>` tag.
 
 Example:
 
 **my-template.handlebars**
 ```
-hello, {{name}}
+hello, Dr. {{name}}
 ```
 
 **my-server-code.js**
 ```
-Handlebars.templates['my-template']({name: 'Chris'});
-// > hello, Chris
+Handlebars.templates["my-template"]({name: "Who"});
+// > hello, Dr. Who
 ```
 
 ## Helpers
 
-You can define helpers on the server via `OriginalHandlebars.registerHelper` method.
+You can define helpers on the server via `OriginalHandlebars.registerHelper`
+method.
 
 ## License
 MIT

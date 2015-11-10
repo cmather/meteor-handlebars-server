@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'cmather:handlebars-server',
+  name: 'astrocoders:handlebars-server',
   version: '1.0.0',
   summary: 'Allows handlebars templates to be defined on the server in .handlebars files',
   git: 'https://github.com/cmather/meteor-handlebars-server',
