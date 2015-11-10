@@ -16,7 +16,7 @@ Package.registerBuildPlugin({
   use: [
     'caching-compiler@1.0.0',
     'ecmascript',
-    'ejson',
+    'ejson@1.0.7',
   ],
 
   sources: [
