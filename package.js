@@ -1,6 +1,6 @@
 Package.describe({
   name: 'astrocoders:handlebars-server',
-  version: '1.0.1',
+  version: '1.0.2',
   summary: 'Allows handlebars templates to be defined on the server in .handlebars files',
   git: 'https://github.com/cmather/meteor-handlebars-server',
   documentation: 'README.md',
