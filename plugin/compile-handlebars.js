@@ -31,9 +31,10 @@ class HandlebarsServer extends CachingCompiler {
     const templateName = file.getBasename().replace(/(.hbs)|(.handlebars)/, '');
 
     const content = EJSON.stringify(file.getContentsAsString());
+
     const output =`
       Handlebars.templates = Handlebars.templates || {};
-      var template = OriginalHandlebars.compile('${content}');
+      var template = OriginalHandlebars.compile(${content});
       Handlebars.templates['${templateName}'] = function(data, partials){
         partials = partials || {};
         return template(data || {}, {
