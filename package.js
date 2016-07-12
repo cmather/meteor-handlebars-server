@@ -1,6 +1,6 @@
 Package.describe({
   name: 'astrocoders:handlebars-server',
-  version: '1.0.0',
+  version: '1.0.1',
   summary: 'Allows handlebars templates to be defined on the server in .handlebars files',
   git: 'https://github.com/cmather/meteor-handlebars-server',
   documentation: 'README.md',
@@ -47,7 +47,7 @@ Package.onUse(function(api){
 
 Package.onTest(function (api) {
   api.use([
-   'cmather:handlebars-server',
+   'astrocoders:handlebars-server',
    'tinytest',
    'test-helpers'
   ], 'server');
