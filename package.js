@@ -47,9 +47,9 @@ Package.onUse(function(api){
 
 Package.onTest(function (api) {
   api.use([
+    'tinytest',
    'astrocoders:handlebars-server',
-   'tinytest',
-   'test-helpers'
+   'test-helpers',
   ], 'server');
 
   api.addFiles([
