@@ -1,36 +1,58 @@
-Npm.depends({
-  "handlebars": "1.0.10"
-});
-
 Package.describe({
-  summary: "Allows handlebars templates to be defined on the server in .handlebars files",
-  version: "0.2.0"
+  name: 'astrocoders:handlebars-server',
+  version: '1.0.3',
+  summary: 'Allows handlebars templates to be defined on the server in .handlebars files',
+  git: 'https://github.com/Astrocoders/meteor-handlebars-server',
+  documentation: 'README.md',
 });
 
-Package._transitional_registerBuildPlugin({
-  name: "compileServerHandlebarsTemplates",
-  use: ["handlebars"],
+Npm.depends({
+  'handlebars': '4.0.4',
+});
+
+Package.registerBuildPlugin({
+  name: 'compileServerHandlebarsTemplates',
+
+  use: [
+    'caching-compiler@1.0.0',
+    'ecmascript',
+    'ejson@1.0.7',
+  ],
+
   sources: [
-    'plugin/compile-handlebars.js'
-  ]
+    'plugin/compile-handlebars.js',
+  ],
+
+  npmDependencies: {
+    'handlebars': '4.0.4',
+  },
 });
 
-Package.on_use(function (api) {
-  api.versionsFrom('METEOR-CORE@0.9.0-rc12');
-  api.use(['handlebars', 'underscore'], 'server');
-  api.add_files('handlebars-server.js', 'server');
-  api.export('Handlebars', 'server');
-  api.export('OriginalHandlebars', 'server');
-});
+Package.onUse(function(api){
+  api.versionsFrom('1.2.0.1');
 
-Package.on_test(function (api) {
   api.use([
-   'cmather:handlebars-server',
-   'tinytest',
-   'test-helpers'
+    'ecmascript',
+    'underscore',
+    'isobuild:compiler-plugin@1.0.0',
   ], 'server');
 
-  api.add_files([
+  api.addFiles('handlebars-server.js', 'server');
+
+  api.export([
+    'Handlebars',
+    'OriginalHandlebars',
+  ], 'server');
+});
+
+Package.onTest(function (api) {
+  api.use([
+    'tinytest',
+   'astrocoders:handlebars-server',
+   'test-helpers',
+  ], 'server');
+
+  api.addFiles([
     'handlebars-server-tests.handlebars',
     'handlebars-server-tests-2.handlebars',
     'handlebars-server-tests.js'
